@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Detail</title>
+</head>
+<body>
+
+    <h1>Product Detail Page</h1>
+
+    <div id="product-detail"></div>
+
+    <script src="js/products.js"></script>
+
+    <script>
+        // get selected product id
+        const id = localStorage.getItem("id");
+
+        // find product
+        const product = products.find(p => p.id == id);
+
+        // show product
+        document.getElementById("product-detail").innerHTML = `
+            <h2>${product.name}</h2>
+            <img src="${product.image}" width="200">
+            <p>₹${product.price}</p>
+            <p>${product.description}</p>
+        `;
+    </script>
+
+</body>
+</html>
